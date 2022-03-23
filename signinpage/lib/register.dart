@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Loginpage extends StatefulWidget {
-  Loginpage({Key? key}) : super(key: key);
+class Myregister extends StatefulWidget {
+  Myregister({Key? key}) : super(key: key);
 
   @override
-  State<Loginpage> createState() => _LoginpageState();
+  State<Myregister> createState() => _MyregisterState();
 }
 
-class _LoginpageState extends State<Loginpage> {
+class _MyregisterState extends State<Myregister> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +17,7 @@ class _LoginpageState extends State<Loginpage> {
         
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/login.png'),
+          image: AssetImage('assets/register.png'),
           
       
       ),
@@ -31,7 +30,7 @@ class _LoginpageState extends State<Loginpage> {
         children: [
           Container(
             padding: EdgeInsets.only(left: 70, top: 70),
-            child: Text("Welcome\n Back", 
+            child: Text("Create\n Account", 
             style: TextStyle(
               color: Colors.white,
               fontSize: 33,
@@ -56,6 +55,21 @@ class _LoginpageState extends State<Loginpage> {
                       fillColor: Colors.lightBlue.shade50,
                       filled: true,
                       hintText: "Enter your name",
+                      labelText: "Name",
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextField(
+                    
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      fillColor: Colors.lightBlue.shade50,
+                      filled: true,
+                      
+                      hintText: "Enter your Email",
                       labelText: "Email",
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                     ),
@@ -81,7 +95,7 @@ class _LoginpageState extends State<Loginpage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Sign In", style: TextStyle(color: Colors.black54, fontSize: 20,fontWeight: FontWeight.w700),),
+                      Text("Create Account", style: TextStyle(color: Colors.black54, fontSize: 20,fontWeight: FontWeight.w700),),
                       CircleAvatar(
                         radius: 25,
                         backgroundColor: Colors.black54,
@@ -102,10 +116,10 @@ class _LoginpageState extends State<Loginpage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(onPressed: (){
-                        Navigator.pushNamed(context, '/register');
+                        Navigator.pushNamed(context, '/loginpage');
 
                       },
-                       child: Text("Sign up", style: TextStyle(
+                       child: Text("Sign in", style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontSize: 20,
                         color: Colors.black54,
